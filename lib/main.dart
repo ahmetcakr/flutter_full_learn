@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/101/test_learn_view.dart';
+import 'package:flutter_full_learn/101/scaffold_learn.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -12,9 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // Buradaki meterial app, uygulamanın her şeyidir.
+      // Uygulama burada çizilir burada çalışır.
+      // CupertinoApp de vardır bu daha çok IOS componentlerini kullanır.
       title: 'Flutter Demo',
+      // title uygulamamızın ismi diyebiliriz.
+      // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
       theme: ThemeData.dark(),
-      home: TextLearnView(),
+      home: const ScaffoldLearnView(),
     );
   }
 }

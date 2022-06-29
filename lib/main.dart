@@ -18,8 +18,24 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       // title uygulamamızın ismi diyebiliriz.
       // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme:
+          ThemeData(primarySwatch: colorCustom, bottomAppBarColor: colorCustom),
       home: const DenemeApp(),
     );
   }
 }
+
+const MaterialColor colorCustom = MaterialColor(0xFF880E4F, color);
+
+const Map<int, Color> color = {
+  50: Color.fromRGBO(136, 14, 79, .1),
+  100: Color.fromRGBO(136, 14, 79, .2),
+  200: Color.fromRGBO(136, 14, 79, .3),
+  300: Color.fromRGBO(136, 14, 79, .4),
+  400: Color.fromRGBO(136, 14, 79, .5),
+  500: Color.fromRGBO(136, 14, 79, .6),
+  600: Color.fromRGBO(136, 14, 79, .7),
+  700: Color.fromRGBO(136, 14, 79, .8),
+  800: Color.fromRGBO(136, 14, 79, .9),
+  900: Color.fromRGBO(136, 14, 79, 1),
+};

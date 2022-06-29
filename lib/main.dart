@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/101/scaffold_learn.dart';
+import 'package:flutter_full_learn/101/trying.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       // title uygulamamızın ismi diyebiliriz.
       // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
-      theme: ThemeData.dark(),
-      home: const ScaffoldLearnView(),
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: const DenemeApp(),
     );
   }
 }

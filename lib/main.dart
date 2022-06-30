@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-import '101/button_learn.dart';
+import '101/color_learn.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -19,23 +20,17 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       // title uygulamamızın ismi diyebiliriz.
       // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
-      theme: ThemeData.dark(),
-      home: const ButtonLearn(),
+      theme: ThemeData.dark().copyWith(
+          // errorColor: ColorsItems().porsche,
+          // bunu burada tanımlarsak error color kullandığımız her yerde rengini sulıu yapar
+          appBarTheme: const AppBarTheme(
+              // tüm projede oluşan appbarlara bu özellikler uygulanır
+              centerTitle: true,
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              systemOverlayStyle: SystemUiOverlayStyle.light)),
+
+      home: ColorLearnView(),
     );
   }
 }
-
-const MaterialColor colorCustom = MaterialColor(0xFF880E4F, color);
-
-const Map<int, Color> color = {
-  50: Color.fromRGBO(136, 14, 79, .1),
-  100: Color.fromRGBO(136, 14, 79, .2),
-  200: Color.fromRGBO(136, 14, 79, .3),
-  300: Color.fromRGBO(136, 14, 79, .4),
-  400: Color.fromRGBO(136, 14, 79, .5),
-  500: Color.fromRGBO(136, 14, 79, .6),
-  600: Color.fromRGBO(136, 14, 79, .7),
-  700: Color.fromRGBO(136, 14, 79, .8),
-  800: Color.fromRGBO(136, 14, 79, .9),
-  900: Color.fromRGBO(136, 14, 79, 1),
-};

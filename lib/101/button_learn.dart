@@ -34,11 +34,34 @@ class ButtonLearn extends StatelessWidget {
         InkWell(
           onTap: () {},
           child: const Text('data'),
-        )
+        ),
+        Container(
+          height: 200,
+          color: Colors.white,
+        ),
+        const SizedBox(height: 10),
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: Colors.black,
+                shape: const RoundedRectangleBorder(
+                    // Bu burada yanlış
+                    borderRadius: BorderRadius.all(Radius.circular(20)))),
+            onPressed: () {},
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  // aslında bu kullanım yanlış
+                  top: 10,
+                  bottom: 10,
+                  right: 40,
+                  left: 40),
+              child: Text('Place Bid',
+                  style: Theme.of(context).textTheme.headline4),
+            )),
       ]),
     );
   }
 }
 
 
-// 17.50
+// Componentlere özellik verirken bunları her componentte özellik atayarak yapmayız.
+// Bu özellikleri tek bir yere atayıp oradan kullanmalıyız. Bu şekilde kontrolü de kolay olur.

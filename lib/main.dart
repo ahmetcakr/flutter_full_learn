@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '101/color_learn.dart';
+import 'package:flutter_full_learn/101/image_learn.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -14,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       // Buradaki meterial app, uygulamanın her şeyidir.
       // Uygulama burada çizilir burada çalışır.
       // CupertinoApp de vardır bu daha çok IOS componentlerini kullanır.
@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
       // title uygulamamızın ismi diyebiliriz.
       // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
       theme: ThemeData.dark().copyWith(
+          cardTheme: CardTheme(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
+
           // errorColor: ColorsItems().porsche,
           // bunu burada tanımlarsak error color kullandığımız her yerde rengini sulıu yapar
           appBarTheme: const AppBarTheme(
@@ -30,7 +34,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: ColorLearnView(),
+      home: const ImageLearn(),
     );
   }
 }

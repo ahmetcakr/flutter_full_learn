@@ -14,7 +14,8 @@ class ButtonLearn extends StatelessWidget {
               backgroundColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.pressed)) {
               return Colors.red;
-            } // Bu kullanım çok önerilmese de böyle bir özelleştirme var.
+            }
+            return null; // Bu kullanım çok önerilmese de böyle bir özelleştirme var.
           })),
           child: Text('Save', style: Theme.of(context).textTheme.subtitle1),
           onPressed: () {},

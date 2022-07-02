@@ -19,6 +19,11 @@ class ImageLearn extends StatelessWidget {
                 width: 400,
                 child: PngImage(name: ImageItems().appWithBookWithoutPath),
               ),
+              Image.network(
+                'src',
+                errorBuilder: (context, error, stackTrace) =>
+                    const Icon(Icons.error_outline_outlined),
+              )
             ],
           )
         ],
@@ -41,8 +46,7 @@ class PngImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       _nameWithPath,
-      fit: BoxFit.cover,
-      height: 100,
+      fit: BoxFit.fill,
     );
   }
 

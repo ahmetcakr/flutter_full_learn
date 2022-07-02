@@ -1,16 +1,2 @@
-# flutter_full_learn
+## Learning Flutter Area <br><br><img src="https://camo.githubusercontent.com/50d7a65ffe5406b0bad412a292c922a166309ee78ad583c5c22883b523929bba/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f3930302f312a414478613844417532705436364e7633726f527376412e676966" width="300px">
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

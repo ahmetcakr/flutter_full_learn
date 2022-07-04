@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/101/trying03.dart';
+import 'package:flutter_full_learn/101/stateful_learn.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: const Trying03(),
+      home: const StatefulLearn(),
     );
   }
 }

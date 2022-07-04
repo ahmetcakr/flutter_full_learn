@@ -75,6 +75,7 @@ class NoteDemosApp extends StatelessWidget {
 class _SubtitleWidget extends StatelessWidget {
   const _SubtitleWidget({
     Key? key,
+    // ignore: unused_element
     this.textAlign = TextAlign.center,
     required this.subtitleText,
   }) : super(key: key);

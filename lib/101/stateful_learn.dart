@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/product/counter_hello_button.dart';
 
 class StatefulLearn extends StatefulWidget {
   // Dışarı ile haberleştiğimiz kısım
@@ -31,11 +32,17 @@ class _StatefulLearnState extends State<StatefulLearn> {
         children: [_incrementButton(), _deincrementPadding()],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      body: Center(
-          child: Text(
-        _countValue.toString(),
-        style: Theme.of(context).textTheme.headline2,
-      )),
+      body: Column(
+        children: [
+          Center(
+              child: Text(
+            _countValue.toString(),
+            style: Theme.of(context).textTheme.headline2,
+          )),
+          const Placeholder(),
+          const CounterHelloButton(),
+        ],
+      ),
     );
   }
 

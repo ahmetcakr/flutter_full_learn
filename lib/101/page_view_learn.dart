@@ -26,6 +26,7 @@ class _PageViewLearnState extends State<PageViewLearn> {
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
+          Text(_currentPageIndex.toString()),
           FloatingActionButton(
             onPressed: () {
               _pageController.previousPage(

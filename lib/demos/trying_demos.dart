@@ -8,10 +8,10 @@ class TryingDemos extends StatefulWidget {
 }
 
 class _TryingDemosState extends State<TryingDemos> {
+  bool itemColor = true;
   @override
   Widget build(BuildContext context) {
     const anasayfaTitle = 'Anasayfa';
-    bool itemColor = false;
 
     return Scaffold(
       appBar: AppBar(
@@ -43,14 +43,10 @@ class _TryingDemosState extends State<TryingDemos> {
                   ),
                 ),
                 TextButton(
-                    onPressed: () {
-                      setState(() {
-                        itemColor = !itemColor;
-                      });
-                    },
-                    child: Text(
+                    onPressed: () {},
+                    child: const Text(
                       'Tıklayın!',
-                      style: TextStyle(fontSize: itemColor ? 15 : 36),
+                      style: TextStyle(fontSize: 36),
                     ))
               ],
             ),
@@ -71,17 +67,46 @@ class _TryingDemosState extends State<TryingDemos> {
             ],
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      itemColor = !itemColor;
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                      primary: itemColor ? Colors.black : Colors.red),
+                  child: const Text('data')),
+            ],
+          ),
+          Column(
             children: [
               Row(
                 mainAxisSize: MainAxisSize.min,
-                children: const [
+                children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.all(50.0),
-                    child: _CustomFactionButton(),
+                    padding: const EdgeInsets.all(30.0),
+                    child: FloatingActionButton(
+                      backgroundColor: itemColor ? Colors.white : Colors.black,
+                      onPressed: () {
+                        setState(() {
+                          itemColor = !itemColor;
+                        });
+                      },
+                    ),
                   ),
                   Padding(
-                      padding: EdgeInsets.all(50.0),
-                      child: _CustomFactionButton())
+                    padding: const EdgeInsets.all(30.0),
+                    child: FloatingActionButton(
+                      backgroundColor: itemColor ? Colors.white : Colors.black,
+                      onPressed: () {
+                        setState(() {
+                          itemColor = !itemColor;
+                        });
+                      },
+                    ),
+                  )
                 ],
               )
             ],

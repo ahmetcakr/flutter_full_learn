@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/demos/trying_demos.dart';
-
-import '101/statefull_life_cycle_learn.dart';
+import 'package:flutter_full_learn/101/text_field_learn.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -23,6 +21,8 @@ class MyApp extends StatelessWidget {
       // title uygulamamızın ismi diyebiliriz.
       // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
       theme: ThemeData.dark().copyWith(
+          inputDecorationTheme: const InputDecorationTheme(
+              iconColor: Colors.red, border: OutlineInputBorder()),
           cardTheme: CardTheme(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: const TryingDemos(),
+      home: const TextFieldLearn(),
     );
   }
 }

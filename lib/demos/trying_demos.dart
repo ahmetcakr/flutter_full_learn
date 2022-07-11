@@ -117,19 +117,6 @@ class _TryingDemosState extends State<TryingDemos> {
   }
 }
 
-class _CustomFactionButton extends StatelessWidget {
-  const _CustomFactionButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {},
-    );
-  }
-}
-
 class _CustomCard extends StatelessWidget {
   const _CustomCard({
     Key? key,

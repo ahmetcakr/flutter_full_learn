@@ -1,10 +1,12 @@
 // bir ekran olacak
 // bu ekranda 3 button olacka ve bunlara basınca renk değiştirecek
 // Seçili olan button selected icon olacak.
+
 import 'package:flutter/material.dart';
 
 class ColorsDemos extends StatefulWidget {
-  const ColorsDemos({Key? key}) : super(key: key);
+  const ColorsDemos({Key? key, required this.initialColor}) : super(key: key);
+  final Color? initialColor;
 
   @override
   State<ColorsDemos> createState() => _ColorsDemosState();
@@ -12,6 +14,23 @@ class ColorsDemos extends StatefulWidget {
 
 class _ColorsDemosState extends State<ColorsDemos> {
   Color? _backgroundColor = Colors.transparent;
+
+  @override
+  void initState() {
+    super.initState();
+    _backgroundColor = widget.initialColor ?? Colors.transparent;
+  }
+
+  @override
+  void didUpdateWidget(covariant ColorsDemos oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // inspect(oldWidget); print gibi debug durumlarında kullanılabilir
+
+    if (widget.initialColor != _backgroundColor &&
+        widget.initialColor != null) {
+      changeBackgroundColor(widget.initialColor!);
+    }
+  }
 
   void changeBackgroundColor(Color color) {
     setState(() {

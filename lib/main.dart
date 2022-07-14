@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/demos/trying_demos02.dart';
+
+import 'demos/my_collections_demos.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: const TryingDemos02(),
+      home: const MyCollectionsDemos(),
     );
   }
 }

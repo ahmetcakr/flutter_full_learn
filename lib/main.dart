@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '202/tab_learn.dart';
+import 'package:flutter_full_learn/202/model_learn_view.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -49,7 +48,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: const TabLearn(),
+      home: const ModelLearnView(),
     );
   }
 }

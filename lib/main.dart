@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/demos/braille/braille_demos.dart';
+
+import '202/tab_learn.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -21,6 +22,14 @@ class MyApp extends StatelessWidget {
       // title uygulamamızın ismi diyebiliriz.
       // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
       theme: ThemeData.light().copyWith(
+          tabBarTheme: const TabBarTheme(
+            labelColor: Colors.green,
+            unselectedLabelColor: Colors.red,
+            indicatorSize: TabBarIndicatorSize.tab,
+          ),
+          bottomAppBarTheme: const BottomAppBarTheme(
+            shape: CircularNotchedRectangle(),
+          ),
           inputDecorationTheme: const InputDecorationTheme(
               iconColor: Colors.red, border: OutlineInputBorder()),
           cardTheme: CardTheme(
@@ -40,7 +49,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: const BrailleDemos(),
+      home: const TabLearn(),
     );
   }
 }

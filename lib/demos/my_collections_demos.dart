@@ -14,66 +14,67 @@ class _MyCollectionsDemosState extends State<MyCollectionsDemos> {
   @override
   void initState() {
     super.initState();
-    _items = [
-      CollectionModel(
-          imagePath: 'https://picsum.photos/200',
-          title: 'Abstract Art',
-          price: 3),
-      CollectionModel(
-          imagePath: 'https://picsum.photos/200',
-          title: 'Abstract Art2',
-          price: 5),
-      CollectionModel(
-          imagePath: 'https://picsum.photos/200',
-          title: 'Abstract Art3',
-          price: 7),
-    ];
+    _items = CollectionItems().items;
   }
 
   @override
   Widget build(BuildContext context) {
+    const String pageTitle = 'My Collections';
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Collections'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
-        ),
+        title: const Text(pageTitle),
       ),
-      body: ListView.builder(
+      body: ListView.separated(
+        separatorBuilder: (context, index) {
+          return const Divider();
+        },
         //  Burada listview builder kullanılır.
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: PaddingUtility().paddingHorizontal,
         itemCount: _items.length,
         itemBuilder: (context, index) {
-          return Card(
-            margin: const EdgeInsets.only(bottom: 20),
-            child: SizedBox(
-              height: 300,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    Expanded(
-                        child: Container(
-                      color: Colors.red,
-                      child: Image.network(
-                        _items[index].imagePath,
-                        fit: BoxFit.cover,
-                      ),
-                    )),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(_items[index].title),
-                        Text(_items[index].price.toString()),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
+          return _CategoryCard(
+            model: _items[index],
           );
         },
+      ),
+    );
+  }
+}
+
+class _CategoryCard extends StatelessWidget {
+  const _CategoryCard({
+    Key? key,
+    required CollectionModel model,
+  })  : _model = model,
+        super(key: key);
+
+  final CollectionModel _model;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      margin: PaddingUtility().paddingBottom,
+      child: Padding(
+        padding: PaddingUtility().paddingAll,
+        child: Column(
+          children: [
+            Image.network(
+              _model.imagePath,
+              fit: BoxFit.cover,
+            ),
+            Padding(
+              padding: PaddingUtility().paddingTop,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(_model.title),
+                  Text(_model.price.toString()),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -89,4 +90,36 @@ class CollectionModel {
     required this.title,
     required this.price,
   });
+}
+
+class CollectionItems {
+  late final List<CollectionModel> items;
+
+  CollectionItems() {
+    items = [
+      CollectionModel(
+          imagePath: ProjectImages.imageCollections,
+          title: 'Abstract Art',
+          price: 3),
+      CollectionModel(
+          imagePath: ProjectImages.imageCollections,
+          title: 'Abstract Art2',
+          price: 5),
+      CollectionModel(
+          imagePath: ProjectImages.imageCollections,
+          title: 'Abstract Art3',
+          price: 7),
+    ];
+  }
+}
+
+class PaddingUtility {
+  final paddingTop = const EdgeInsets.only(top: 10);
+  final paddingBottom = const EdgeInsets.only(bottom: 20);
+  final paddingAll = const EdgeInsets.all(20.0);
+  final paddingHorizontal = const EdgeInsets.symmetric(horizontal: 20);
+}
+
+class ProjectImages {
+  static const imageCollections = 'https://picsum.photos/500/300';
 }

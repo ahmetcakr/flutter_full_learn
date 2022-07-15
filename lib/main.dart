@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'demos/my_collections_demos.dart';
+import 'package:flutter_full_learn/demos/braille/braille_demos.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       // title uygulamamızın ismi diyebiliriz.
       // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.light().copyWith(
           inputDecorationTheme: const InputDecorationTheme(
               iconColor: Colors.red, border: OutlineInputBorder()),
           cardTheme: CardTheme(
@@ -33,11 +32,15 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(
               // tüm projede oluşan appbarlara bu özellikler uygulanır
               centerTitle: true,
+              titleTextStyle: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
               backgroundColor: Colors.transparent,
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: const MyCollectionsDemos(),
+      home: const BrailleDemos(),
     );
   }
 }

@@ -15,6 +15,7 @@ class BrailleDemos extends StatefulWidget {
 class _BrailleDemosState extends State<BrailleDemos> {
   final _pageController = PageController();
   int _currentIndex = 0;
+  // ignore: unused_field
   int _currentPageIndex = 0;
 
   void _updatePageIndex(int index) {

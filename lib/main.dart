@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_full_learn/202/model_learn_view.dart';
+
+import '202/service/service_learn_get_view.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       // title uygulamamızın ismi diyebiliriz.
       // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
-      theme: ThemeData.light().copyWith(
+      theme: ThemeData.dark().copyWith(
           tabBarTheme: const TabBarTheme(
             labelColor: Colors.green,
             unselectedLabelColor: Colors.red,
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: const ModelLearnView(),
+      home: const ServiceLearn(),
     );
   }
 }

@@ -7,7 +7,7 @@
 // There is a few ways to initialize variables.
 // They are:
 
-class PostModel {
+class PostModel1 {
   int? userId;
   int? id;
   String? title;

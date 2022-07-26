@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '202/service/service_learn_get_view.dart';
+import 'package:flutter_full_learn/202/package_learn_view.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -49,7 +48,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: const ServiceLearn(),
+      home: const PackageLearnView(),
     );
   }
 }

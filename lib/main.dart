@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/202/package_learn_view.dart';
+import 'package:flutter_full_learn/202/theme/light_theme.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -20,33 +20,35 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       // title uygulamamızın ismi diyebiliriz.
       // androidtte uygulamayı arkaplana aldığımızda üstünde çıkan isim
-      theme: ThemeData.dark().copyWith(
-          tabBarTheme: const TabBarTheme(
-            labelColor: Colors.green,
-            unselectedLabelColor: Colors.red,
-            indicatorSize: TabBarIndicatorSize.tab,
-          ),
-          bottomAppBarTheme: const BottomAppBarTheme(
-            shape: CircularNotchedRectangle(),
-          ),
-          inputDecorationTheme: const InputDecorationTheme(
-              iconColor: Colors.red, border: OutlineInputBorder()),
-          cardTheme: CardTheme(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))),
+      theme: LighTheme().theme,
 
-          // errorColor: ColorsItems().porsche,
-          // bunu burada tanımlarsak error color kullandığımız her yerde rengini sulıu yapar
-          appBarTheme: const AppBarTheme(
-              // tüm projede oluşan appbarlara bu özellikler uygulanır
-              centerTitle: true,
-              titleTextStyle: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              systemOverlayStyle: SystemUiOverlayStyle.light)),
+      // ThemeData.dark().copyWith(
+      //     tabBarTheme: const TabBarTheme(
+      //       labelColor: Colors.green,
+      //       unselectedLabelColor: Colors.red,
+      //       indicatorSize: TabBarIndicatorSize.tab,
+      //     ),
+      //     bottomAppBarTheme: const BottomAppBarTheme(
+      //       shape: CircularNotchedRectangle(),
+      //     ),
+      //     inputDecorationTheme: const InputDecorationTheme(
+      //         iconColor: Colors.red, border: OutlineInputBorder()),
+      //     cardTheme: CardTheme(
+      //         shape: RoundedRectangleBorder(
+      //             borderRadius: BorderRadius.circular(10))),
+
+      //     // errorColor: ColorsItems().porsche,
+      //     // bunu burada tanımlarsak error color kullandığımız her yerde rengini sulıu yapar
+      //     appBarTheme: const AppBarTheme(
+      //         // tüm projede oluşan appbarlara bu özellikler uygulanır
+      //         centerTitle: true,
+      //         titleTextStyle: TextStyle(
+      //             fontSize: 20,
+      //             fontWeight: FontWeight.bold,
+      //             color: Colors.black),
+      //         backgroundColor: Colors.transparent,
+      //         elevation: 0,
+      //         systemOverlayStyle: SystemUiOverlayStyle.light)),
 
       home: const PackageLearnView(),
     );

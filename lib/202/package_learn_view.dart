@@ -18,12 +18,17 @@ class _PackageLearnViewState extends State<PackageLearnView>
     return Scaffold(
         appBar: AppBar(),
         floatingActionButton: FloatingActionButton(
+          backgroundColor:
+              Theme.of(context).buttonTheme.colorScheme?.onSecondary,
           onPressed: () {
             launchURL(_url);
           },
         ),
-        body: const LoadingBar(
-          size: 20,
+        body: Column(
+          children: [
+            Text('aaaaa', style: Theme.of(context).textTheme.subtitle1),
+            const LoadingBar(),
+          ],
         ));
   }
 }

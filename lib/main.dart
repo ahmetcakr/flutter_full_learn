@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/202/package_learn_view.dart';
 import 'package:flutter_full_learn/202/theme/light_theme.dart';
+import 'package:flutter_full_learn/202/theme_learn_view.dart';
 
 void main() {
   runApp(const MyApp()); // AliDayı
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       //         elevation: 0,
       //         systemOverlayStyle: SystemUiOverlayStyle.light)),
 
-      home: const PackageLearnView(),
+      home: const ThemeLearnView(),
     );
   }
 }
